@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calendar"></div>
+    <script src="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.js"></script>
+    <script>
+        var cal = new Calendar(document.querySelector('.calendar'))
+        
+        document.querySelector('.calendar').addEventListener('clickDay', function(e) {
+            console.log("Click on day: " + e.date + " (" + e.events.length + " events)");
+            alert("Click on day: " + e.date + " (" + e.events.length + " events)");
+        })
+
+        document.querySelector('.calendar').addEventListener('mouseOnDay', function(e) {
+            console.log("Mouse enter in a day: " + e.date + " (" + e.events.length + " events)");
+            document.getElementById("NW").innerHTML = e.date;
+        })
+    </script>
+    <b id="NW">0</b>
+</body>
+</html>
